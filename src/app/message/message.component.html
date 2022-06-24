@@ -1,0 +1,44 @@
+<div class="messages-title">
+  <h2>All messages</h2>
+  <button type="button" (click)="showFavorites()">{{buttonText}}</button>
+</div>
+<ul *ngIf="showFavoritesActive === true" class="messages">
+  <li *ngFor="let m of filteredMessages$ | async">
+    <div class="message-card {{m.message.isFavorite ? 'is-favorite' : ''}}">
+      <div class="user-details">
+        <div class="user-names">
+          <p class="user-screen-name">
+            {{m.message.user.name}}
+          </p>
+          <p class="user-name">
+            {{m.message.user.screen_name}}
+          </p>
+        </div>
+        <img src='{{m.message.user.profile_image_url}}'>
+      </div>
+      <p class="message-text">{{m.message.text}}</p>
+      <button class="button-favorite" type="button" (click)="markAsFavorite(m.message.isFavorite, m.message.id)"><mat-icon>star</mat-icon></button>
+    </div>
+    
+  </li>
+</ul>
+<ul *ngIf="showFavoritesActive === false" class="messages">
+  <li *ngFor="let m of messageArray$ | async">
+    <div class="message-card {{m.message.isFavorite ? 'is-favorite' : ''}}">
+      <div class="user-details">
+        <div class="user-names">
+          <p class="user-screen-name">
+            {{m.message.user.name}}
+          </p>
+          <p class="user-name">
+            {{m.message.user.screen_name}}
+          </p>
+        </div>
+        <img src='{{m.message.user.profile_image_url}}'>
+      </div>
+      <p class="message-text">{{m.message.text}}</p>
+      <button class="button-favorite" type="button" (click)="markAsFavorite(m.message.isFavorite, m.message.id)"><mat-icon>star</mat-icon></button>
+    </div>
+    
+  </li>
+</ul>

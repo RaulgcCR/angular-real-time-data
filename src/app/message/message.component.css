@@ -1,0 +1,78 @@
+/* messagesComponent's private CSS styles */
+  .messages {
+    margin: 3rem 1rem;
+    list-style-type: none;
+  }
+  .messages li {
+    position: relative;
+  }
+  
+  .messages li:hover {
+    left: .1em;
+  }
+  
+  .messages-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  }
+  
+  .messages .message-card {
+    width: 30%;
+    padding: 1rem;
+    box-shadow: 5px 5px 10px 1px #888888;
+    border-radius: 0.5rem;
+    margin: 2rem;
+  }
+
+  .messages .message-card.is-favorite {
+    background-color: rgb(140, 255, 159);
+  }
+
+  .messages .message-card:hover {
+    background-color: #F9F9F9;
+    box-shadow: 5px 5px 10px 1px #555555;
+  }
+
+  .messages .message-card.is-favorite:hover {
+    background-color: rgba(140, 255, 159, 0.801);
+  }
+
+  .messages .user-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .messages .user-details img {
+    width: 100px;
+    border-radius: 50px;
+  }
+
+  .messages .user-screen-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem;
+  }
+
+  .messages .user-name {
+    margin: 0.5rem;
+    color: #666666;
+  }
+
+  .messages .message-text {
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .messages .button-favorite {
+    cursor: pointer;
+    background-color: #faebd7;
+    border-radius: 50px;
+  }
+
+  .messages .button-favorite:hover {
+    background-color: #fadbb2d5;
+  }
